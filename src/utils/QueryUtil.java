@@ -56,10 +56,10 @@ public abstract class QueryUtil {
 
                 String sqlQuery = getFieldToInsert(value);
                 ResultSet result = ExecuteQuery.query("INSERT INTO %s %s RETURNING id", 
-                value.getClass().getSimpleName(), sqlQuery);
+                relationName, sqlQuery);
 
                 if (result.next()) {
-                    value = result.getString("id");
+                    value = result.getInt("id");
                 }
             }
 

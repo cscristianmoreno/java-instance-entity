@@ -117,7 +117,7 @@ public static <T> String getFieldToInsert(T clazz) throws Exception {
             value.getClass().getSimpleName(), sqlQuery);
 
             if (result.next()) {
-                value = result.getString("id");
+                value = result.getInt("id");
             }
         }
 
